@@ -37,10 +37,13 @@ public class Sistema {
 			
 			usuario1.agregarFigurita(this, figurita2);
 			usuario2.agregarFigurita(this, figurita1);	
-			
 		}
 	}
 
+	public Boolean verificarSiLaFiguritaEstaEnElSistema(Figurita figurita) {
+		return this.figuritas.contains(figurita);
+	}
+	
 	public Set<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
@@ -48,15 +51,5 @@ public class Sistema {
 
 	public Set<Figurita> getFiguritas() {
 		return this.figuritas;
-	}
-
-
-	public boolean verificarSiLaFiguritaEstaEnElSistema(Figurita figurita) {
-		
-		for (Figurita figurita1 : this.figuritas) {
-			if(figurita1.equals(figurita))
-				return true;
-		}
-		return false;
 	}
 }
